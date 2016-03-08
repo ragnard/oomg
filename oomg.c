@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <limits.h>
  
 int main(int argc, char *argv[]) {
@@ -12,7 +13,7 @@ int main(int argc, char *argv[]) {
   }  
   
   for (int i = 0; i < nallocs; i++) {
-    void *ret = malloc(szalloc);
+    void *ret = calloc(szalloc, sizeof(int8_t));
     if (ret == NULL) {
       printf("malloc failed after %d iterations\n", i);
       return -1;
