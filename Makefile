@@ -1,4 +1,3 @@
-
 all: oomg
 
 clean:
@@ -9,4 +8,7 @@ oomg: oomg.c
 	gcc -std=c99 -static -Wall -g -o oomg oomg.c
 
 image: oomg
-	docker build -t oomg .
+	docker build -t ragge/oomg:latest .
+
+push:
+	docker push ragge/oomg
